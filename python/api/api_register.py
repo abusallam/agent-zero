@@ -4,8 +4,10 @@ from database import crud, schemas
 from sqlalchemy.orm import Session
 
 class ApiRegister(ApiHandler):
-    def requires_auth(self): return False
-    def requires_csrf(self): return False
+    @classmethod
+    def requires_auth(cls): return False
+    @classmethod
+    def requires_csrf(cls): return False
     async def handle_request(self, request):
         json_data = request.get_json()
         try:
