@@ -232,6 +232,7 @@ def run():
 
     def register_api_handler(app, handler: type[ApiHandler]):
         name = handler.__module__.split(".")[-1]
+        print(f"Registering API handler: {name}")
         instance = handler(app, lock)
 
         async def handler_wrap():
