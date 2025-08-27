@@ -5,8 +5,10 @@ from sqlalchemy.orm import Session
 import jwt, datetime, os
 
 class ApiLogin(ApiHandler):
-    def requires_auth(self): return False
-    def requires_csrf(self): return False
+    @classmethod
+    def requires_auth(cls): return False
+    @classmethod
+    def requires_csrf(cls): return False
     async def handle_request(self, request):
         data = request.get_json()
         email = data.get('email')
