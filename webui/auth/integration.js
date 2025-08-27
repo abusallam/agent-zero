@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Integration script loaded. Attaching event listeners...");
     // Login form
     const loginForm = document.querySelector('form');
     if (window.location.pathname.includes('login')) {
